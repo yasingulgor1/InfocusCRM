@@ -1,0 +1,618 @@
+<div class="card">
+    <div class="card-body">
+
+        <div class="default-tab">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#process"><i class="la la-angle-double-right mr-2"></i> Aşamalar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#status"><i class="la la-tags mr-2"></i> Cihaz Durumu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#deviceClass"><i class="la la-list-ul mr-2"></i> Cihaz Sınıfı</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#deviceBrand"><i class="la la-store mr-2"></i> Markalar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#deviceModel"><i class="la la-registered mr-2"></i> Modeller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#repairType"><i class="la la-tools mr-2"></i> Onarım Türü</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#mail"><i class="la la-envelope mr-2"></i> Mail Tanımları</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="process">
+                    <div class="pt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="col-sm-6 p-md-0">
+                                    <h4 class="card-title">Aşamalar</h4>
+                                </div>
+                                <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalProcess" class="btn btn-sm btn-secondary pull-right">Aşama Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th><strong>Sıra</strong></th>
+                                                <th><strong>Aşama Adı</strong></th>
+                                                <th><strong>Partnere Açık</strong></th>
+                                                <th style="width:85px;"><strong>İşlem</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Serviste</td>
+                                                <td>Açık</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalProcess" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Teklif Verildi</td>
+                                                <td>Kapalı</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalProcess" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="status">
+                    <div class="pt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="col-sm-6 p-md-0">
+                                    <h4 class="card-title">Cihaz Durumu</h4>
+                                </div>
+                                <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalStatus" class="btn btn-sm btn-secondary pull-right">Durum Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th><strong>Sıra</strong></th>
+                                                <th><strong>Durum Açıklaması</strong></th>
+                                                <th><strong>Partnere Açık</strong></th>
+                                                <th style="width:85px;"><strong>İşlem</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Aktif Cihaz</td>
+                                                <td>Açık</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalStatus" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Pert</td>
+                                                <td>Kapalı</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalStatus" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="deviceClass">
+                    <div class="pt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="col-sm-6 p-md-0">
+                                    <h4 class="card-title">Cihaz Sınıfı</h4>
+                                </div>
+                                <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalClass" class="btn btn-sm btn-secondary pull-right">Sınıf Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th><strong>Sıra</strong></th>
+                                                <th><strong>Sınıf Açıklaması</strong></th>
+                                                <th><strong>Partnere Açık</strong></th>
+                                                <th style="width:85px;"><strong>İşlem</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Printer</td>
+                                                <td>Açık</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalClass" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Scanner</td>
+                                                <td>Kapalı</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalClass" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="deviceBrand">
+                    <div class="pt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="col-sm-6 p-md-0">
+                                    <h4 class="card-title">Markalar</h4>
+                                </div>
+                                <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalBrand" class="btn btn-sm btn-secondary pull-right">Marka Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th><strong>Marka</strong></th>
+                                                <th style="width:85px;"><strong>İşlem</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>HP</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalBrand" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Canon</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalBrand" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="deviceModel">
+                    <div class="pt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="col-sm-6 p-md-0">
+                                    <h4 class="card-title">Modeller</h4>
+                                </div>
+                                <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalModel" class="btn btn-sm btn-secondary pull-right">Model Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th><strong>Marka</strong></th>
+                                                <th><strong>Sınıf</strong></th>
+                                                <th><strong>Model</strong></th>
+                                                <th style="width:85px;"><strong>İşlem</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>HP</td>
+                                                <td>Printer</td>
+                                                <td>HP345CA</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalModel" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Canon</td>
+                                                <td>Scanner</td>
+                                                <td>C0123</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalModel" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="repairType">
+                    <div class="pt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="col-sm-6 p-md-0">
+                                    <h4 class="card-title">Onarım Türleri</h4>
+                                </div>
+                                <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalRepairType" class="btn btn-sm btn-secondary pull-right">Onarım Türü Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th><strong>Onarım Türü</strong></th>
+                                                <th><strong>Partnere Açık</strong></th>
+                                                <th style="width:85px;"><strong>İşlem</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Yerinde Bakım</td>
+                                                <td>Açık</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalRepairType" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Serviste Bakım</td>
+                                                <td>Açık</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalRepairType" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Yedek Parça</td>
+                                                <td>Kapalı</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="mail">
+                    <div class="pt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="col-sm-6 p-md-0">
+                                    <h4 class="card-title">Mail Tanımları</h4>
+                                </div>
+                                <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalMail" class="btn btn-sm btn-secondary pull-right">Mail Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th><strong>Aşama</strong></th>
+                                                <th><strong>Mail Açıklaması</strong></th>
+                                                <th><strong>Partnere Açık</strong></th>
+                                                <th style="width:85px;"><strong>İşlem</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Serviste</td>
+                                                <td>Teklif Maili</td>
+                                                <td>Açık</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalMail" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Teklif Verildi</td>
+                                                <td>Teklif Onay Maili</td>
+                                                <td>Kapalı</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target=".modalMail" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalProcess" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Aşama Bilgileri</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-2">
+                                        <input type="number" class="form-control" placeholder="Sıra">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="txtTradeName" placeholder="Aşama Adı" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <select class="form-control">
+                                            <option>Partnere Kapalı</option>
+                                            <option>Partnere Açık</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right">Kaydet</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalStatus" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cihaz Durumu Bilgileri</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-2">
+                                        <input type="number" class="form-control" placeholder="Sıra">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="txtTradeName" placeholder="Durum Açıklaması" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <select class="form-control">
+                                            <option>Partnere Kapalı</option>
+                                            <option>Partnere Açık</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right">Kaydet</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalClass" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cihaz Sınıf Bilgileri</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-2">
+                                        <input type="number" class="form-control" placeholder="Sıra">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="txtTradeName" placeholder="Sınıf Açıklaması" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <select class="form-control">
+                                            <option>Partnere Kapalı</option>
+                                            <option>Partnere Açık</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right">Kaydet</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalBrand" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Marka Bilgileri</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="txtTradeName" placeholder="Marka" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right">Kaydet</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalModel" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Model Bilgileri</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <select class="form-control">
+                                            <option>HP</option>
+                                            <option>Canon</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="txtTradeName" placeholder="Model" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right">Kaydet</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalRepairType" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Onarım Türü Bilgileri</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="txtTradeName" placeholder="Onarım Türü" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <select class="form-control">
+                                            <option>Partnere Kapalı</option>
+                                            <option>Partnere Açık</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right">Kaydet</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalMail" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Mail Bilgileri</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <select class="form-control">
+                                            <option>Serviste</option>
+                                            <option>Teklif Verildi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="txtTradeName" placeholder="Mail Açıklaması" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <select class="form-control">
+                                            <option>Partnere Kapalı</option>
+                                            <option>Partnere Açık</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input">
+                                                <label class="custom-file-label">Dosya seçiniz...</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right">Kaydet</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,785 @@
+<div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12" *ngIf="status == 'showAdd'">
+    <div class="card">
+        <div class="row page-titles mx-0 bg-primary" style="border-radius: 8px 8px 0px 0px !important;">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text text-white">
+                    <h4 class="text-white">Martaş</h4>
+                    <p class="mb-0">Martaş Otomotiv A.Ş.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <button (click)="changeStatus()" class="btn btn-sm btn-secondary pull-right">Kaydet <i class="fa fa-pencil" aria-hidden="true"></i></button>&nbsp;
+                <button (click)="changeStatus()" class="btn btn-sm btn-danger pull-right">Sil <i class="fa fa-trash" aria-hidden="true"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button (click)="back()" type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+
+                <div class="default-tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#home"><i class="la la-home mr-2"></i> Firma Bilgileri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#profile"><i class="la la-phone mr-2"></i> Kişiler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#contact"><i class="la la-user mr-2"></i> Outsource</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#message"><i class="la la-envelope mr-2"></i> Mesajlar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#meeting"><i class="la la-comment mr-2"></i> Toplantılar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#opp"><i class="la la-handshake mr-2"></i> Fırsatlar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#bill"><i class="la la-money-bill mr-2"></i> Faturalar</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade  show active" id="home" role="tabpanel">
+                            <div class="pt-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="txtFirmName" placeholder="Firma Adı" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" id="selIlce">
+                                                    <option selected>Sektör...</option>
+                                                    <option>1</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" id="selIlce">
+                                                    <option selected>Müşteri Temsilcisi...</option>
+                                                    <option>1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="txtTradeName" placeholder="Ticari Ünvan" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control" id="txtTaxOffice" placeholder="Vergi Dairesi" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control" id="txtTaxNo" placeholder="Vergi Numarası" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <textarea cols="5" rows="3" class="form-control" placeholder="Adres"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <select class="form-control" id="selCity">
+                                                    <option selected>İl...</option>
+                                                    <option>1</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <select class="form-control" id="selIlce">
+                                                    <option selected>İlçe...</option>
+                                                    <option>1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
+                                                <input type="tel" class="form-control" id="txtPhone1" placeholder="Telefon" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="tel" class="form-control" id="txtPhone2" placeholder="Telefon" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="tel" class="form-control" id="txtPhone2" placeholder="Fax" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="col-sm-6 p-md-0">
+                                            <h4 class="card-title">Lokasyonlar</h4>
+                                        </div>
+                                        <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalLocation" class="btn btn-sm btn-secondary pull-right">Lokasyon Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-responsive-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>Lokasyon Adı</strong></th>
+                                                        <th><strong>İl/İlçe</strong></th>
+                                                        <th><strong>Adres</strong></th>
+                                                        <th><strong>Telefon</strong></th>
+                                                        <th style="width:85px;"><strong>İşlem</strong></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Avcılar Şube</td>
+                                                        <td>İstanbul/Avcılar</td>
+                                                        <td>Adres olarak birşeyler gelsin</td>
+                                                        <td>02125344343</td>
+                                                        <td>
+                                                            <a href="#" data-toggle="modal" data-target=".modalLocation"  class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>İzmir Fabrika</td>
+                                                        <td>İzmir/Konak</td>
+                                                        <td>Adres olarak birşeyler gelsin</td>
+                                                        <td>02125344343</td>
+                                                        <td>
+                                                            <a href="#" data-toggle="modal" data-target=".modalLocation"  class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="col-sm-6 p-md-0">
+                                            <h4 class="card-title">Bağlantılar</h4>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="input-group mb-3 input-primary">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" style="width: 100px;">Web Sitesi</span>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="input-group mb-3 input-primary">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" style="width: 100px;">Linkedin</span>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="input-group mb-3 input-primary">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" style="width: 100px;">Kariyer.Net</span>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="input-group mb-3 input-primary">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" style="width: 100px;">Paraşüt</span>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="input-group mb-3 input-primary">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" style="width: 100px;">Pipedrive</span>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Şirket Evrakları</h4>
+                                        <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalFile" class="btn btn-sm btn-secondary pull-right">Evrak Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="basic-form custom_file_input">
+                                            <form action="#">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="width: 200px;">Vergi Levhası</span>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input">
+                                                        <label class="custom-file-label"></label>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="width: 200px;">Ticaret Sicil</span>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input">
+                                                        <label class="custom-file-label"></label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Notlar</h4>
+                                        <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalNote" class="btn btn-sm btn-secondary pull-right">Not Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="basic-list-group">
+                                            <div class="list-group">
+                                                <a href="javascript:void()" class="list-group-item list-group-item-action flex-column align-items-start">
+                                                    <div class="d-flex w-100 justify-content-between">
+                                                        <h5 class="mb-3">Not Başlığı</h5><small>21/06/2014</small>
+                                                    </div>
+                                                    <p class="mb-1">Not açıklamaları.</p>
+                                                    <small>Göksel Kesim</small>
+                                                </a>
+                                                <a href="javascript:void()" class="list-group-item list-group-item-action flex-column align-items-start">
+                                                    <div class="d-flex w-100 justify-content-between">
+                                                        <h5 class="mb-3">List group item heading</h5><small class="text-muted">3
+                                                            days ago</small>
+                                                    </div>
+                                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p><small class="text-muted">Donec
+                                                        id elit non mi porta.</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile">
+                            <div class="pt-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="col-sm-6 p-md-0">
+                                            <h4 class="card-title">Kişiler</h4>
+                                        </div>
+                                        <div class="col-sm-6 p-md-0"><button data-toggle="modal" data-target=".modalContact" class="btn btn-sm btn-secondary pull-right">Kişi Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-responsive-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>Ad Soyad</strong></th>
+                                                        <th><strong>Departman</strong></th>
+                                                        <th><strong>Pozisyon</strong></th>
+                                                        <th><strong>Telefon</strong></th>
+                                                        <th><strong>Mail Adresi</strong></th>
+                                                        <th style="width:85px;"><strong>İşlem</strong></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Göksel Kesim</td>
+                                                        <td>Bilgi İşlem</td>
+                                                        <td>Bilgi İşlem Müdürü</td>
+                                                        <td>02125344343</td>
+                                                        <td>goksel.kesim@infocus.com.tr</td>
+                                                        <td>
+                                                            <a href="#" data-toggle="modal" data-target=".modalContact" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>İzmir Fabrika</td>
+                                                        <td>İzmir/Konak</td>
+                                                        <td>Adres olarak birşeyler gelsin</td>
+                                                        <td>02125344343</td>
+                                                        <td>02125344343</td>
+                                                        <td>
+                                                            <a href="#" data-toggle="modal" data-target=".modalContact" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="contact">
+                            <div class="pt-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="col-sm-6 p-md-0">
+                                            <h4 class="card-title">Pozisyonlar</h4>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-responsive-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>İlan No</strong></th>
+                                                        <th><strong>Pozisyon</strong></th>
+                                                        <th><strong>Seviye</strong></th>
+                                                        <th><strong>Maaş Aralığı</strong></th>
+                                                        <th><strong>Tarih</strong></th>
+                                                        <th><strong>Adet</strong></th>
+                                                        <th><strong>Durum</strong></th>
+                                                        <th style="width:85px;"><strong>İşlem</strong></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>.Net Developer</td>
+                                                        <td>Senior</td>
+                                                        <td>8.500 - 9.500</td>
+                                                        <td>10/01/2020</td>
+                                                        <td>1</td>
+                                                        <td>Aktif</td>
+                                                        <!-- Aktif/Kapandı/İptal/Cevap Bekliyor -->
+                                                        <td>
+                                                            <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>.Net Developer</td>
+                                                        <td>Senior</td>
+                                                        <td>8.500 - 9.500</td>
+                                                        <td>10/01/2020</td>
+                                                        <td>1</td>
+                                                        <td>İptal</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="col-sm-6 p-md-0">
+                                            <h4 class="card-title">Teklifler</h4>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-responsive-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>İlan No</strong></th>
+                                                        <th><strong>Pozisyon</strong></th>
+                                                        <th><strong>CV</strong></th>
+                                                        <th><strong>Tutar</strong></th>
+                                                        <th><strong>Tarih</strong></th>
+                                                        <th><strong>Durum</strong></th>
+                                                        <th><strong>Açıklama</strong></th>
+                                                        <th style="width:85px;"><strong>İşlem</strong></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>.Net Developer</td>
+                                                        <td>Göksel Kesim</td>
+                                                        <td>21.000</td>
+                                                        <td>10/01/2020</td>
+                                                        <td>Cevap Bekliyor</td>
+                                                        <!-- Cevap Bekliyor/Görüşme/Olumsuz/Olumlu -->
+                                                        <td></td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="message">
+                            <div class="pt-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="col-sm-6 p-md-0">
+                                            <h4 class="card-title">Mesajlar</h4>
+                                        </div>
+                                        <div class="col-sm-6 p-md-0"><button (click)="changeStatus()" class="btn btn-sm btn-secondary pull-right">Yeni Mesaj <i class="fa fa-plus" aria-hidden="true"></i></button>&nbsp;</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-responsive-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>Tarih</strong></th>
+                                                        <th><strong>Kimden</strong></th>
+                                                        <th><strong>Kime</strong></th>
+                                                        <th><strong>Başlık</strong></th>
+                                                        <th style="width:85px;"><strong>İşlem</strong></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>10/01/2020</td>
+                                                        <td>Göksel Kesim</td>
+                                                        <td>Ahmet Çopur, Serkan Çimenler</td>
+                                                        <td>Fiyat Teklifimiz Hakkında</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="meeting">
+                            <div class="pt-4">
+                                <div id="DZ_W_Notification1" class="widget-media dz-scroll p-3">
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media mr-2 media-primary">
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Telefon Görüşmesi</h6>
+                                                    <small class="d-block">29 July 2020 - 02:26 PM</small><small class="d-block">Göksel Kesim, İrem Özbay</small>
+                                                    <br>
+                                                    <p>
+                                                        Toplantı yaptık, süper geçti
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media mr-2 media-primary">
+                                                    <i class="fa fa-home"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Yerinde Toplantı</h6>
+                                                    <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media mr-2 media-primary">
+                                                    <i class="fa fa-chrome"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Online Toplantı</h6>
+                                                    <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="opp">
+                            <div class="pt-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="col-sm-6 p-md-0">
+                                            <h4 class="card-title">Fırsatlar</h4>
+                                        </div>
+                
+                                    </div>
+                                    <div class="card-body">
+                
+                                        <div class="table-responsive">
+                                            <table class="table table-responsive-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>Tarih</strong></th>
+                                                        <th><strong>Kimden</strong></th>
+                                                        <th><strong>Kime</strong></th>
+                                                        <th><strong>Başlık</strong></th>
+                                                        <th style="width:85px;"><strong>İşlem</strong></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>10/01/2020</td>
+                                                        <td>Göksel Kesim</td>
+                                                        <td>Ahmet Çopur, Serkan Çimenler</td>
+                                                        <td>Fiyat Teklifimiz Hakkında</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="bill">
+                            <div class="pt-4">
+                                <h4>Faturalar</h4>
+                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.
+                                </p>
+                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalLocation" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Firma Ara</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" placeholder="Lokasyon Adı">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="txtTradeName" placeholder="Telefon" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <textarea cols="5" rows="3" class="form-control" placeholder="Adres"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                        <select class="form-control" id="selCity">
+                                            <option selected>İl...</option>
+                                            <option>1</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="selIlce">
+                                            <option selected>İlçe...</option>
+                                            <option>1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right">Kaydet</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalFile" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Evrak Yükle</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <select class="form-control" id="selCity">
+                                            <option selected>Evrak Türü...</option>
+                                            <option>1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input">
+                                                <label class="custom-file-label">Dosya seçiniz...</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">Kaydet</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalNote" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Not Girişi</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="txtTradeName" placeholder="Not Başlığı" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <textarea cols="5" rows="3" class="form-control" placeholder="Not"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right">Kaydet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modalContact" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Kişi Bilgileri</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" placeholder="Ad Soyad">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="txtTradeName" placeholder="Mail Adresi" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <select class="form-control" id="selCity">
+                                            <option selected>Departman...</option>
+                                            <option>1</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select class="form-control" id="selIlce">
+                                            <option selected>Pozisyon...</option>
+                                            <option>1</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" placeholder="Telefon No" />
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" placeholder="Dahili" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary pull-right">Kaydet</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12 bg-white" *ngIf="status == 'showDataTable'">
+    <div class="row">
+        <div class="col-sm-12 bg-primary p-3" style="border-radius:8px 8px 0 0;">
+            <div class="col-sm-12 p-md-0">
+                <div class="welcome-text text-white">
+                    <h4 class="text-white">Müşteriler
+                        <button (click)="changeStatus()" class="btn btn-sm btn-secondary pull-right">Firma Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="basic-form">
+
+        <div class="card">
+            <div class="card-header">
+                <div class="col-sm-6 p-md-0">
+                    <div class="input-group mb-3 input-primary">
+                        <input type="text" class="form-control" placeholder="Firma adı, müşteri temsilcisi, il, ilçeye göre ara...">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th><strong>Firma Adı</strong></th>
+                                <th><strong>Telefon</strong></th>
+                                <th><strong>Müşteri Y.</strong></th>
+                                <th><strong>Açık Poz.</strong></th>
+                                <th><strong>İl/İlçe</strong></th>
+                                <th style="width:85px;"><strong>İşlem</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Martaş</td>
+                                <td>02125344343</td>
+                                <td>Ahmet Çopur</td>
+                                <td>3</td>
+                                <td>İstanbul/Sancaktepe</td>
+                                <td>
+                                    <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-users"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Meiser Izgara</td>
+                                <td>İzmir/Konak</td>
+                                <td>Yılma Aka</td>
+                                <td>0</td>
+                                <td>Kocaeli/Kartepe</td>
+                                <td>
+                                    <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-users"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

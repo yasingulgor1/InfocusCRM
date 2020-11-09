@@ -1,0 +1,51 @@
+.deznav {
+    width: 5rem;
+    padding-bottom: 0;
+    height: 100% !important;
+    position: fixed;
+    top: 5rem;
+    padding-top: 0;
+    z-index: 5;
+    background-color: #fff;
+    transition: all .2s ease;
+    box-shadow: 0px 40px 40px 0px rgba(82, 63, 105, 0.1);
+}
+
+.logout-btn {
+    color: #fff;
+    width: 100%;
+    display: block;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    position: absolute;
+    bottom: 5rem !important;
+    left: auto;
+}
+
+.nav-header .brand-logo {
+    display: flex;
+    height: 100%;
+    width: 5rem;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.125rem;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 700;
+}
+
+.nav-header {
+    width: 5rem;
+    position: fixed;
+}
+
+.content-body .container-fluid {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 100px;
+}
