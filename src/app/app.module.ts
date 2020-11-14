@@ -21,6 +21,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { SetSubMenu1Component } from './set-sub-menu1/set-sub-menu1.component';
 import { SetSubMenu2Component } from './set-sub-menu2/set-sub-menu2.component';
 import { SetSubMenu3Component } from './set-sub-menu3/set-sub-menu3.component';
+import { HttpClientModule, HttpHeaders } from "@angular/common/http";
 
 
 
@@ -50,7 +51,8 @@ import { SetSubMenu3Component } from './set-sub-menu3/set-sub-menu3.component';
     RouterModule,
     FormsModule,
     BrowserModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

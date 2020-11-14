@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BomSubMenu1Component implements OnInit {
 
+  status = "showDataTable";
+  locationCount = 1;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeStatus() {
+    this.status = "showAdd";
+
+  }
+
+  showSys() {
+    this.status = "showSys";
+    console.log("Clicked");
+  }
+
+  back() {
+    this.status = "showDataTable";
   }
 
 }

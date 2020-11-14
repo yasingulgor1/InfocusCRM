@@ -1,4 +1,7 @@
+import { JsonArray } from '@angular-devkit/core';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GeneralserviceService } from '../GeneralService/generalservice.service'
 
 @Component({
   selector: 'app-firmabilgileri',
@@ -9,9 +12,21 @@ export class FirmabilgileriComponent implements OnInit {
 
   status = "showDataTable";
   locationCount = 1;
-  constructor() { }
+  service : GeneralserviceService;
+  Alldata : any[] = [];
+  constructor(private http : HttpClient){
+      this.service = new GeneralserviceService("test",http);
+   }
 
   ngOnInit(): void {
+    this.service.getAllData().subscribe(alldata => {
+      this.Alldata=alldata;
+      var first = this.Alldata[0];
+      var jsonfirst = JSON.stringify(first);
+      console.log("JsonFirst : " + jsonfirst);
+      
+    
+    });
   }
 
   changeStatus() {
@@ -20,6 +35,7 @@ export class FirmabilgileriComponent implements OnInit {
 
   back() {
     this.status = "showDataTable";
+    console.log("asdasd" + this.Alldata);
   }
 
   times(max: number) {

@@ -1,1 +1,653 @@
-<p>bom-sub-menu1 works!</p>
+<div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12" *ngIf="status == 'showSys'">
+    <div class="card">
+        <div class="row page-titles mx-0 bg-primary" style="border-radius: 8px 8px 0px 0px !important;">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text text-white">
+                    <h4 class="text-white">C123445435(Sys no gelecek)</h4>
+                    <p class="mb-0">Canon/C1234(marka/model gelecek)</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <button (click)="showSys()" class="btn btn-sm btn-secondary pull-right">Kaydet <i class="fa fa-pencil" aria-hidden="true"></i></button>&nbsp;
+                <button (click)="back()" type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+
+
+                <div class="pt-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Arıza Bilgileri</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <textarea type="text" col="3" rows="5" class="form-control" placeholder="Arıza Açıklaması"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <select class="form-control" id="selClass">
+                                        <option selected>Onarım Türü</option>
+                                        <option value="Online">Yerinde Onarım</option>
+                                        <option value="InPlace">Serviste Onarım</option>
+                                        <option value="Call">Yedek Parça</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="txtSeriNo" placeholder="SYSNo" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="custom-control custom-checkbox mb-3 checkbox-info">
+                                        <input type="checkbox" class="custom-control-input" checked="" id="customCheckBox2" required="">
+                                        <label class="custom-control-label" for="customCheckBox2">Hadekişi Yapıldı</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="col-sm-6 p-md-0">
+                                <h4 class="card-title">İşlemler</h4>
+                            </div>
+                            <div class="col-sm-6 p-md-0"><button class="btn btn-sm btn-secondary pull-right" data-toggle="modal" data-target=".modalContactSelect">Ekle</button>&nbsp;</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-responsive-sm mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th><strong>Firma</strong></th>
+                                            <th><strong>Aşama</strong></th>
+                                            <th><strong>İşlem Tarihi</strong></th>
+                                            <th><strong>Açıklama</strong></th>
+                                            <th style="width:85px;"><strong>İşlem</strong></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Bürosis</td>
+                                            <td>Teslim Alındı</td>
+                                            <td>10/10/2020</td>
+                                            <td>Cihaz alındı</td>
+                                            <td>
+                                                <a (click)="showSys()" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>İnfocus</td>
+                                            <td>Teklif Verildi</td>
+                                            <td>11/10/2020</td>
+                                            <td>12.500 TL</td>
+                                            <td>
+                                                <a (click)="showSys()" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12" *ngIf="status == 'showAdd'">
+    <div class="card">
+        <div class="row page-titles mx-0 bg-primary" style="border-radius: 8px 8px 0px 0px !important;">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text text-white">
+                    <h4 class="text-white">C123445435(Seri no gelecek)</h4>
+                    <p class="mb-0">Canon/C1234(marka/model gelecek)</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <button (click)="showSys()" class="btn btn-sm btn-secondary pull-right">Kaydet <i class="fa fa-pencil" aria-hidden="true"></i></button>&nbsp;
+                <button (click)="back()" type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+
+
+                <div class="default-tab">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#info"><i class="la la-info mr-2"></i> Cihaz Bilgileri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#note"><i class="la la-comment-dots mr-2"></i> Notlar&Fırsatlar</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="info">
+                            <div class="pt-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Cihaz Bilgileri</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <div class="col-sm-7">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Marka/Model Bilgileri">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target=".modalFirmSelect">Model Seç</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" id="selClass">
+                                                    <option selected>Cihaz Sınıfı</option>
+                                                    <option value="Online">Printer</option>
+                                                    <option value="InPlace">Scanner</option>
+                                                    <option value="Call">Notebook</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-7">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Firma Adı">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target=".modalFirmSelect">Firma Seç</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="custom-control custom-checkbox mb-3 checkbox-info">
+                                                    <input type="checkbox" class="custom-control-input" checked="" id="customCheckBox2" required="">
+                                                    <label class="custom-control-label" for="customCheckBox2">Aktif Cihaz</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control" id="txtSeriNo" placeholder="Seri No" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control" id="txtBarkod" placeholder="Barkod" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input name="datepicker" class="datepicker-default form-control" id="datepicker" placeholder="Garanti Başlangıcı">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input name="datepicker" class="datepicker-default form-control" id="datepicker" placeholder="Garanti Bitişi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="col-sm-6 p-md-0">
+                                            <h4 class="card-title">Servisler</h4>
+                                        </div>
+                                        <div class="col-sm-6 p-md-0"><button class="btn btn-sm btn-secondary pull-right" data-toggle="modal" data-target=".modalContactSelect">Ekle</button>&nbsp;</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-responsive-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>SYSNo</strong></th>
+                                                        <th><strong>Hakediş</strong></th>
+                                                        <th><strong>Son Tarih</strong></th>
+                                                        <th><strong>Onarım Türü</strong></th>
+                                                        <th><strong>Aşama</strong></th>
+                                                        <th><strong>Açıklama</strong></th>
+                                                        <th style="width:85px;"><strong>Detay</strong></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>S1231312312</td>
+                                                        <td>-</td>
+                                                        <td>10/10/2020</td>
+                                                        <td>Serviste Onarım</td>
+                                                        <td>Serviste</td>
+                                                        <td>Cihaz kağıdı içine almıyor.</td>
+                                                        <td>
+                                                            <a (click)="showSys()" class="btn btn-secondary shadow btn-xs sharp"><i class="fa fa-info"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>S1231312312</td>
+                                                        <td>-</td>
+                                                        <td>10/10/2020</td>
+                                                        <td>Serviste Onarım</td>
+                                                        <td>Serviste</td>
+                                                        <td>Cihaz kağıdı içine almıyor.</td>
+                                                        <td>
+                                                            <a (click)="showSys()" class="btn btn-secondary shadow btn-xs sharp"><i class="fa fa-info"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="note">
+                            <div class="pt-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Toplantı Notları</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">Not Ekle</button>
+                                            </div>
+                                        </div>
+                                        <div class="basic-list-group">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">Efes ERP Canias 15 ay olmuş geçeli TROI dili</li>
+                                                <li class="list-group-item">3-4 tb veri var</li>
+                                                <li class="list-group-item">Samsun, Erzurum, Diyarbakır depo açılacak</li>
+                                                <li class="list-group-item">450 client</li>
+                                                <li class="list-group-item">İstanbul 4 şube, izmir, adana, ankara</li>
+                                                <li class="list-group-item">Cloud geçecekler</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="col-sm-6 p-md-0">
+                                            <h4 class="card-title">Fırsatlar</h4>
+                                        </div>
+
+                                    </div>
+                                    <div class="card-body">
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="txtFirmName" placeholder="Fırsat Başlığı" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" id="selIlce">
+                                                    <option selected>Tür...</option>
+                                                    <option>1</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" id="selIlce">
+                                                    <option selected>Öncelik...</option>
+                                                    <option>Yüksek</option>
+                                                    <option>Orta</option>
+                                                    <option>Düşük</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="txtFirmName" placeholder="Fırsat Detayı" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" id="selIlce">
+                                                    <option selected>Durum...</option>
+                                                    <option>Aktif</option>
+                                                    <option>İptal</option>
+                                                    <option>Uzun Vadeli</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12 p-md-0"><button (click)="changeStatus()" class="btn btn-sm btn-secondary pull-right">Kaydet</button>&nbsp;</div>
+
+                                        <br><br>
+
+                                        <div class="table-responsive">
+                                            <table class="table table-responsive-sm mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>Tarih</strong></th>
+                                                        <th><strong>Kimden</strong></th>
+                                                        <th><strong>Kime</strong></th>
+                                                        <th><strong>Başlık</strong></th>
+                                                        <th style="width:85px;"><strong>İşlem</strong></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>10/01/2020</td>
+                                                        <td>Göksel Kesim</td>
+                                                        <td>Ahmet Çopur, Serkan Çimenler</td>
+                                                        <td>Fiyat Teklifimiz Hakkında</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary pull-right">Kaydet&Seç</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade modalContactSelect" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Kişi Ara</h5>
+                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="default-tab">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#contactList"><i class="la la-angle-double-right mr-2"></i> Kişi Listesi</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#newContact"><i class="la la-tags mr-2"></i> Yeni Kişi Oluştur</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="contactList">
+                                            <div class="pt-4">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-responsive-sm mb-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th><strong>Ad Soyad</strong></th>
+                                                                        <th><strong>Departman</strong></th>
+                                                                        <th><strong>Pozisyon</strong></th>
+                                                                        <th><strong>Telefon</strong></th>
+                                                                        <th style="width:85px;"><strong>Seç</strong></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Müşteri 1</td>
+                                                                        <td>Bilgi İşlem</td>
+                                                                        <td>IT Müdürü</td>
+                                                                        <td>02125909090</td>
+                                                                        <td>
+                                                                            <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="newContact">
+                                            <div class="pt-4">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control" placeholder="Ad Soyad">
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control" id="txtTradeName" placeholder="Mail Adresi" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-3">
+                                                                <select class="form-control" id="selCity">
+                                                                    <option selected>Departman...</option>
+                                                                    <option>1</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <select class="form-control" id="selIlce">
+                                                                    <option selected>Pozisyon...</option>
+                                                                    <option>1</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control" placeholder="Telefon No" />
+                                                            </div>
+                                                            <div class="col-sm-2">
+                                                                <input type="text" class="form-control" placeholder="Dahili" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-primary pull-right">Kaydet&Seç</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade modalFirmSelect" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Firma Ara</h5>
+                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="default-tab">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#list"><i class="la la-angle-double-right mr-2"></i> Firma Listesi</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#newfirm"><i class="la la-tags mr-2"></i> Yeni Firma Oluştur</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="list">
+                                            <div class="pt-4">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" class="form-control" placeholder="Firma Adı, Ticari Ünvan, İl, İlçe bilgilerinden birini yazınız...">
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-primary" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">Bul</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-responsive-sm mb-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th><strong>Firma Adı</strong></th>
+                                                                        <th><strong>Ticari Ünvan</strong></th>
+                                                                        <th><strong>İl/İlçe</strong></th>
+                                                                        <th><strong>Müşteri Temsilcisi</strong></th>
+                                                                        <th style="width:85px;"><strong>Seç</strong></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Martaş</td>
+                                                                        <td>Martaş Otomotiv A.Ş.</td>
+                                                                        <td>İstanbul/Sancaktepe</td>
+                                                                        <td>Ahmet Çopur</td>
+                                                                        <td>
+                                                                            <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Meiser</td>
+                                                                        <td>Meiser Izgara</td>
+                                                                        <td>Kocaeli/Kartepe</td>
+                                                                        <td>Serkan Çimenler</td>
+                                                                        <td>
+                                                                            <a href="#" class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="newfirm">
+                                            <div class="pt-4">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-5">
+                                                                <input type="text" class="form-control" placeholder="Firma Adı">
+                                                            </div>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control" id="txtTradeName" placeholder="Ticari Ünvan" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-12">
+                                                                <textarea cols="5" rows="3" class="form-control" placeholder="Adres"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-3">
+                                                                <select class="form-control" id="selCity">
+                                                                    <option selected>İl...</option>
+                                                                    <option>1</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <select class="form-control" id="selIlce">
+                                                                    <option selected>İlçe...</option>
+                                                                    <option>1</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control" id="txtTaxOffice" placeholder="Vergi Dairesi" />
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control" id="txtTaxNo" placeholder="Vergi Numarası" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4">
+                                                                <input type="tel" class="form-control" id="txtPhone1" placeholder="Telefon" />
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input type="tel" class="form-control" id="txtPhone2" placeholder="Telefon" />
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input type="tel" class="form-control" id="txtPhone2" placeholder="Fax" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-primary pull-right">Kaydet&Seç</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xl-12 col-xxl-12 col-lg-12 col-md-12 bg-white" *ngIf="status == 'showDataTable'">
+    <div class="row">
+        <div class="col-sm-12 bg-primary p-3" style="border-radius:8px 8px 0 0;">
+            <div class="col-sm-12 p-md-0">
+                <div class="welcome-text text-white">
+                    <h4 class="text-white">Cihaz Listesi
+                        <button (click)="changeStatus()" class="btn btn-sm btn-secondary pull-right">Cihaz Ekle <i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="basic-form">
+
+        <div class="card">
+            <div class="card-header">
+                <div class="col-sm-3 p-md-0">
+                    <div class="input-group  mb-3 input-primary">
+                        <select class="form-control" id="selIlce">
+                            <option selected>Tüm Aşamalar</option>
+                            <option value="ID1">01 - Serviste</option>
+                            <option value="ID2">02 - Teklif Verildi</option>
+                        </select> &nbsp;&nbsp;
+                    </div>
+                </div>
+
+                <div class="col-sm-6 p-md-0 pull-right">
+                    <div class="input-group mb-3 input-primary">
+                        <input type="text" class="form-control" placeholder="Seri no, Sysno, müşteri adı, barkoda göre ara...">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 p-md-0"></div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th><strong>Müşteri</strong></th>
+                                <th><strong>Seri No</strong></th>
+                                <th><strong>Marka/Model</strong></th>
+                                <th><strong>Son İşlem T.</strong></th>
+                                <th><strong>Aşama</strong></th>
+                                <th><strong>Cihaz Durumu</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TüvTürk</td>
+                                <td>C1231231231</td>
+                                <td>Canon/C123123</td>
+                                <td>10/02/2020</td>
+                                <td>Teklif Verildi</td>
+                                <td>Aktif</td>
+                            </tr>
+                            <tr>
+                                <td>TüvTürk</td>
+                                <td>C1231231231</td>
+                                <td>Canon/C123123</td>
+                                <td>10/02/2020</td>
+                                <td>Teklif Verildi</td>
+                                <td>Aktif</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
